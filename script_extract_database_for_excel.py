@@ -7,7 +7,7 @@ import psycopg2 as pg
 import pandas as pd
 import pandas.io.sql as psql
 
-class extractDate ():																		# Inicia a classe
+class extractDate ():																		        # Inicia a classe
 	# reload(sys)																					# Recarrega a biblioteca do sistema
 	# sys.setdefaultencoding("utf-8")																# insere uma nova codificacao de caracter unicode utf8
 	try: 
@@ -52,7 +52,7 @@ class extractDate ():																		# Inicia a classe
 			
 	def for_zip(directory,date,rp_dir, name_db,dir_excel):									# realiza a insercao dos arquivos .xlsx em um arquivo zip
 		try:
-			rar = open (directory+date+'_'+rp_dir+'_'+name_db+'.zip', 'wb')					# cria e nomeia o .rar passando os paramentos do metodo
+			rar = open (directory+date+'_'+rp_dir+'_'+name_db+'.zip', 'wb',encoding='UTF8')					# cria e nomeia o .rar passando os paramentos do metodo
 			doc_zip = zipfile.ZipFile(rar, mode="w")										# cria e nomeia o .zip passando o rar designado anteriormente
 			for file in glob.glob(directory+'\*.xlsx'):										# for para insercao do .xlsx no arquivo zipado
 				doc_zip.write (os.path.join(file),
